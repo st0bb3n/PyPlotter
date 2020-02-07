@@ -43,18 +43,22 @@ y_axis = [.01,
           .90,
           1.00,
           ]
-size = [0,1.1,0,1.1] #x to x, y to y
-plt.figure(1, figsize=(15, 15))
-plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 0.1))
-plt.yticks(np.arange(min(y_axis), max(y_axis)+1, 0.1))
 
+size = [0,1.1,0,1.1] #xmin, xmax, ymin, ymax
+plt.figure(1, figsize=(15, 15)) #size of the generated image
+plt.xticks(np.arange(min(x_axis), max(x_axis)+1, 0.1)) #change intervals X
+plt.yticks(np.arange(min(y_axis), max(y_axis)+1, 0.1)) #change intervals Y
+
+"""
+Main Prog
+"""
 def plotter(x,y,s):
-    plt.xlabel('Voltage (V)')
-    plt.ylabel('Current (1x10^-7 mA)')
-    plt.plot(x,y,color = 'red', label='1N4148')
-    plt.title('Table 1')
-    plt.axis(s)
-    plt.grid(axis='both')
+    plt.xlabel('Voltage (V)') #X axis title
+    plt.ylabel('Current (1x10^-7 mA)') #Y axis title
+    plt.plot(x,y,color = 'red', label='1N4148') #Color and Label of the plot
+    plt.title('Table 1') #Title of the plot 
+    plt.axis(s) #Size 
+    plt.grid(axis='both') #Show Grid
     plt.legend()
     
     
